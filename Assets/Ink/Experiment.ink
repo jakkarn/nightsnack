@@ -4,6 +4,7 @@
 // You can define global variables wherever. The two lines below *should* run on compile, even though the same will never reach them.
 VAR global_variable = true
 VAR global_int = 0
+VAR action = -1
 // Global variables can be read from Unity using the Story.variablesState object.
 
 === header
