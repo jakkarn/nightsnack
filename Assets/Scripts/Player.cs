@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
     public float passiveAttentionGain = 0.01f;
@@ -41,9 +42,8 @@ public class Player : MonoBehaviour {
 
             if (attention.Attention >= 100)
             {
-                //Debug.Log(string.Format("ENCOUNTER - {0}", type));
                 Global.encounter = type;
-                Application.LoadLevel("SimpleBattle");
+				SceneManager.LoadScene ("SimpleBattle");
                 attention.Attention = 0;
                 Global.encounter = EnemyType.NONE;
             }
