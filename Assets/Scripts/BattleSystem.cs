@@ -35,11 +35,21 @@ public class BattleSystem : MonoBehaviour {
 			} else {
 				questions [(int)type] = new List<Question> (JsonConvert.DeserializeObject<Question[]> (questionFiles [(int)type].text));
 			}
+
+			if (greetingFiles [(int)type] == null) {
+				Debug.Log ("No greeting file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
+				greetings [(int)type] = new List<string> ();
+				greetings [(int)type].Add ("'ello, and what are you after then?");
+			} else {
+				greetings [(int)type] = new List<string> (questionFiles [(int)type].text.Split (new char[] { '\n' }));
+			}
 		}
 
 		_buttons = new List<Button>();
 
 		CreateButtons ();
+
+		text.text = greetings [(int)currentEnemyType] [Random.Range (0, greetings [(int)currentEnemyType].Count)];
 	}
 
 	// Update is called once per frame
