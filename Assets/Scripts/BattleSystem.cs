@@ -17,6 +17,8 @@ public class BattleSystem : MonoBehaviour {
 	private int currentChoice = 0;
 	private bool buttonsCreated = false;
 
+    public GameObject player;
+
 
 	private EnemyType currentEnemyType = EnemyType.NERD;
 
