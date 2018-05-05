@@ -175,6 +175,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &30833124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 30833126}
+  - component: {fileID: 30833125}
+  m_Layer: 0
+  m_Name: BattlePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &30833125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30833124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb8d67fcc0a2794e91d58c5c0fe6844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  karisma: 0
+  friendThreshold: 10
+  enemyThreshold: -10
+--- !u!4 &30833126
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30833124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 648.2368, y: 187.40514, z: -8.295884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386788879
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,11 +723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b293f32dfc2f444ae947ad87b1b985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NerdInsults: {fileID: 4900000, guid: 6a3aaaee8046f13418434fb7df627e21, type: 3}
-  NerdCompliments: {fileID: 4900000, guid: 117bb01a9c09dc445937f0b21e876e0c, type: 3}
-  NerdComments: {fileID: 4900000, guid: bf1c11cb32669fd4c9e87b77068efafd, type: 3}
+  _questions:
+  - {fileID: 4900000, guid: 85c18cf1afef4e241a252c8f2cf6a577, type: 3}
   uiRoot: {fileID: 446738552}
   text: {fileID: 1216278571}
   buttonPrefab: {fileID: 114844450832132964, guid: 9dd9a25141af25f49a87416d1ea827c2,
     type: 2}
-  numberOfChoices: 3
+  player: {fileID: 30833124}
