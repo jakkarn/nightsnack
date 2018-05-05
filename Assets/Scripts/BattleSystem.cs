@@ -15,10 +15,11 @@ public class BattleSystem : MonoBehaviour {
 
 
     public RectTransform uiRoot;
-	public Text text;
+	public Text questionText;
+	public Text resposeText;
 	public Button buttonPrefab;
 
-	private List<Button> _buttons;
+	private List<Button> _buttons = new List<Button>();
 	private int currentChoice = 0;
 
     public BattlePlayer player;
@@ -52,7 +53,7 @@ public class BattleSystem : MonoBehaviour {
 
 		CreateButtons ();
 
-		text.text = greetings [(int)currentEnemyType] [Random.Range (0, greetings [(int)currentEnemyType].Count)];
+		resposeText.text = greetings [(int)currentEnemyType] [Random.Range (0, greetings [(int)currentEnemyType].Count)];
 	}
 
 	// Update is called once per frame
@@ -61,9 +62,10 @@ public class BattleSystem : MonoBehaviour {
         if (Input.GetButtonDown("Submit"))
 		{
             player.charisma += answers[currentChoice].effect;
+			resposeText.text = answers [currentChoice].response;
 			ResetButtons();
 			currentChoice = 0;
-			text.text = "";
+			questionText.text = "";
 			CreateButtons ();
 		}
 
@@ -110,7 +112,7 @@ public class BattleSystem : MonoBehaviour {
 		} else {
 			question = encounterQuestions [Random.Range (0, encounterQuestions.Count)];
 		}
-        text.text = question.question;
+        questionText.text = question.question;
         answers = question.answers;
 
 		// Shuffle the list so the options are presented in a rondom order.
