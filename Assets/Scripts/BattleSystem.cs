@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 public class BattleSystem : MonoBehaviour {
 
 	public TextAsset[] greetingFiles = new TextAsset[System.Enum.GetValues (typeof(EnemyType)).Length];
+	List<string>[] greetings;
 
 	public TextAsset[] questionFiles = new TextAsset[System.Enum.GetValues(typeof(EnemyType)).Length];
 	List<Question>[] questions = new List<Question>[System.Enum.GetValues(typeof(EnemyType)).Length];
@@ -94,7 +95,7 @@ public class BattleSystem : MonoBehaviour {
 			question.question = "NO QUESTION FOUND!!!";
 			question.answers = new Answer[] { a };
 		} else {
-			question = encounterQuestions [Random.Range (0, questions.Length)];
+			question = encounterQuestions [Random.Range (0, encounterQuestions.Count)];
 		}
         text.text = question.question;
         answers = question.answers;
