@@ -1,0 +1,47 @@
+[
+    {
+        "question": "Wow, Ben! Remember me from junior high?! *ridiculously big smile*",
+        "answers": [
+        {
+            "text": "Eh... yeah... m-Martin, right?",
+            "effect": -2,
+            "response": "Oh... you really don't remember..."
+        },
+        {
+            "text": "Of, course I remember you. You were pee-da-pants-pete! *grins*",
+            "effect": 2,
+            "response": "HAHA, YEAH! THAT'S ME!"
+        },
+        {
+            "text": "*punch him*",
+            "effect": 1,
+            "response": "*cough* hah, just like old times, huh?"
+        }
+        ]
+    },
+    {
+        "question": "Those are some nice dance moves, man!",
+        "answers": [
+            {
+                "text": "*dance away*",
+                "effect": 1,
+                "response": "*This guy keeps up with your dancing!*"
+            },
+            {
+                "text": "*stop dancing*",
+                "effect": 1,
+                "response": "That got your attention!"
+            },
+    	    {
+        		"text": "...",
+                "effect": 1,
+                "response": "i said... THOSE ARE SOME NICE DANCE MOVES, MAN!"
+    	    },
+            {
+        		"text": "That is so mean...",
+                "effect": -2,
+                "response": "n-no, I'm so sorry, I didn't mean it like that! I feel bad."
+    	    }
+        ]
+    }
+]
