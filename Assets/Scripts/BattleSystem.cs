@@ -6,9 +6,8 @@ using Newtonsoft.Json;
 
 public class BattleSystem : MonoBehaviour {
 
-	public TextAsset NerdInsults;
-	public TextAsset NerdCompliments;
-	public TextAsset NerdComments;
+	public TextAsset[] _questions = new TextAsset[1]; //all questions files 0=nerd
+    Question[] nerd_questions;
 
 	public RectTransform uiRoot;
 	public Text text;
@@ -21,17 +20,12 @@ public class BattleSystem : MonoBehaviour {
 
 	private EnemyType currentEnemyType = EnemyType.NERD;
 
-	public int numberOfChoices = 3;
-
 	// Use this for initialization
 	void Start () {
 
-        var data = JsonConvert.DeserializeObject<Question[]>(NerdInsults.text);
-        string question = data[0].question;
-        Debug.Log(question);
+        nerd_questions = JsonConvert.DeserializeObject<Question[]>(_questions[0].text);
 
 		_buttons = new List<Button>();
-		text.text = "Choose a line"; // TODO: Nåt bättre
 	}
 
 	// Update is called once per frame
@@ -42,29 +36,24 @@ public class BattleSystem : MonoBehaviour {
 				CreateButtons();
 			}
 
-			if (numberOfChoices > 0) // Always true, but cba removing the if
+			if (Input.GetButtonDown("Submit"))
 			{
-				if (Input.GetButtonDown("Submit"))
-				{
-					ResetButtons();
-					currentChoice = 0;
-					text.text = "";
-				}
-
-				if (_buttons.Count > 0)
-					_buttons[currentChoice].Select();
-
-				if (Input.GetButtonDown("Up"))
-				{
-					currentChoice = Mathf.Max(currentChoice - 1, 0);
-				}
-				else if (Input.GetButtonDown("Down"))
-				{
-					currentChoice = Mathf.Min(currentChoice + 1, _buttons.Count - 1);
-				}
+				ResetButtons();
+				currentChoice = 0;
+				text.text = "";
 			}
 
+			if (_buttons.Count > 0)
+				_buttons[currentChoice].Select();
 
+			if (Input.GetButtonDown("Up"))
+			{
+				currentChoice = Mathf.Max(currentChoice - 1, 0);
+			}
+			else if (Input.GetButtonDown("Down"))
+			{
+				currentChoice = Mathf.Min(currentChoice + 1, _buttons.Count - 1);
+			}
 
 		}
 	}
@@ -84,47 +73,43 @@ public class BattleSystem : MonoBehaviour {
 
 	void CreateButtons()
 	{
-		TextAsset[] lists = new TextAsset[3];
-		TextAsset insultList;
-		TextAsset complimentList;
-		TextAsset commentList;
+		Question[] questions;
+        Answer[]  answers;
+
 		switch (currentEnemyType) {
 		case EnemyType.NERD:
-			lists [0] = insultList = NerdInsults;
-			lists [1] = complimentList = NerdCompliments;
-			lists [2] = commentList = NerdComments;
+                questions = nerd_questions;
 			break;
 		default:
 			throw new UnityException ("fuq");
 		}
 
+        Question question = questions[Random.Range(0, questions.Length)];
+        text.text = question.question; // TODO: Nåt bättre
+        answers = question.answers;
+
 		// Shuffle the list so the options are presented in a rondom order.
-		for (int n = lists.Length - 1; n > 0; --n)
+		for (int n = answers.Length - 1; n > 0; --n)
 		{
 			int k = Random.Range (0, n+1);
-			TextAsset tmp = lists [k];
-			lists [k] = lists [n];
-			lists [n] = tmp;
+			Answer tmp = answers [k];
+			answers [k] = answers [n];
+			answers [n] = tmp;
 		}
 
-		for (int i = 0; i < numberOfChoices; i++)
+		for (int i = 0; i < answers.Length; i++)
 		{
 			Button button = Instantiate<Button>(buttonPrefab);
 			if (button != null)
 			{
 				_buttons.Add(button);
 				button.transform.SetParent(uiRoot);
-				button.GetComponentInChildren<Text> ().text = GetRandomLine(lists[i]); // TODO: Set from file?
+				button.GetComponentInChildren<Text> ().text = answers[i].text;
 			}
 		}
 		buttonsCreated = true;
 	}
 
-	string GetRandomLine(TextAsset ta)
-	{
-		string[] lines = ta.text.Split (new char[] { '\n' });
-		return lines [Random.Range (0, lines.Length - 1)];
-	}
 }
 
 
