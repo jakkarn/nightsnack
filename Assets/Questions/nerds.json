@@ -4,7 +4,7 @@
         "answers": [
             {
                 "text": "Boromir, it's a shame he got killed",
-                "effect": +2,
+                "effect": 2,
                 "response": "Yeah, I know. He always dies first."
             },
             {
@@ -14,7 +14,7 @@
             },
 	    {
 		"text": "Daenerys Targaryen would make a great Queen",
-                "effect": +1,
+                "effect": 1,
                 "response": "I ship Daenerys with Jon Snow!"
 	    }
         ]
@@ -29,12 +29,12 @@
             },
             {
                 "text": "Pikachu!",
-                "effect": +1,
+                "effect": 1,
                 "response": "Yeah, pikachu is so cute!"
             },
 	    {
 		"text": "Landorus",
-                "effect": +2,
+                "effect": 2,
                 "response": "That's a great competitive viable choice"
 	    }
         ]

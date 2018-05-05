@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class BattlePlayer : MonoBehaviour {
 
-    public int karisma     = 0;
+    public int charisma     = 0;
     public int friendThreshold = 10;
     public int enemyThreshold = -10;
-    public Text karismaMeter;
+    public Text charismaMeter;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +17,6 @@ public class BattlePlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        karismaMeter.text = karisma.ToString();
+        charismaMeter.text = charisma.ToString();
 	}
 }
