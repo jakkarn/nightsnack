@@ -26,35 +26,32 @@ public class BattleSystem : MonoBehaviour {
         nerd_questions = JsonConvert.DeserializeObject<Question[]>(_questions[0].text);
 
 		_buttons = new List<Button>();
+
+		CreateButtons ();
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetButtonDown("Submit"))
 		{
-			if (! buttonsCreated)
-			{
-				CreateButtons();
-			}
+			ResetButtons();
+			currentChoice = 0;
+			text.text = "";
+			CreateButtons ();
+		}
 
-			if (Input.GetButtonDown("Submit"))
-			{
-				ResetButtons();
-				currentChoice = 0;
-				text.text = "";
-			}
+		if (_buttons.Count > 0) {
+			_buttons [currentChoice].Select ();
+		}
 
-			if (_buttons.Count > 0)
-				_buttons[currentChoice].Select();
-
-			if (Input.GetButtonDown("Up"))
-			{
-				currentChoice = Mathf.Max(currentChoice - 1, 0);
-			}
-			else if (Input.GetButtonDown("Down"))
-			{
-				currentChoice = Mathf.Min(currentChoice + 1, _buttons.Count - 1);
-			}
-
+		if (Input.GetButtonDown("Up"))
+		{
+			currentChoice = Mathf.Max(currentChoice - 1, 0);
+		}
+		else if (Input.GetButtonDown("Down"))
+		{
+			currentChoice = Mathf.Min(currentChoice + 1, _buttons.Count - 1);
 		}
 	}
 
@@ -78,7 +75,7 @@ public class BattleSystem : MonoBehaviour {
 
 		switch (currentEnemyType) {
 		case EnemyType.NERD:
-                questions = nerd_questions;
+            questions = nerd_questions;
 			break;
 		default:
 			throw new UnityException ("fuq");
@@ -110,11 +107,21 @@ public class BattleSystem : MonoBehaviour {
 		buttonsCreated = true;
 	}
 
+	public void SetActiveButton(Button btn)
+	{
+		for (int i = 0; i < _buttons.Count; ++i) {
+			if (btn == _buttons [i]) {
+				currentChoice = i;
+				return;
+			}
+		}
+	}
+
 }
 
 
 public enum EnemyType {
-	NERD ,COOL_KID, GOTH
+	NERD, COOL_KID, GOTH
 }
 
 public class Answer
