@@ -6,11 +6,13 @@ using Newtonsoft.Json;
 
 public class BattleSystem : MonoBehaviour {
 
-	public TextAsset[] greetingFiles = new TextAsset[System.Enum.GetValues (typeof(EnemyType)).Length];
-	List<string>[] greetings;
+    private static int numEnemyTypes = System.Enum.GetValues(typeof(EnemyType)).Length;
 
-	public TextAsset[] questionFiles = new TextAsset[System.Enum.GetValues(typeof(EnemyType)).Length];
-	List<Question>[] questions = new List<Question>[System.Enum.GetValues(typeof(EnemyType)).Length];
+
+    public TextAsset[] greetingFiles;
+	List<string>[] greetings;
+	public TextAsset[] questionFiles;
+	List<Question>[] questions;
     private Answer[] answers;   //currently shown answers
 
 
@@ -29,6 +31,12 @@ public class BattleSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        greetingFiles = new TextAsset[numEnemyTypes];
+        greetings = new List<string>[numEnemyTypes];
+        questionFiles = new TextAsset[numEnemyTypes];
+        questions = new List<Question>[numEnemyTypes];
+
 		foreach (EnemyType type in System.Enum.GetValues(typeof(EnemyType))) {
 			if (questionFiles [(int)type] == null) {
 				Debug.Log ("No question file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
@@ -38,7 +46,10 @@ public class BattleSystem : MonoBehaviour {
 				questions [(int)type] = new List<Question> (JsonConvert.DeserializeObject<Question[]> (questionFiles [(int)type].text));
 			}
 
-			if (greetingFiles [(int)type] == null) {
+            Debug.Log(numEnemyTypes);
+            Debug.Log(greetingFiles.Length);
+
+            if (greetingFiles [(int)type] == null) {
 				Debug.Log ("No greeting file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
 				greetings [(int)type] = new List<string> ();
 				greetings [(int)type].Add ("'ello, and what are you after then?");
