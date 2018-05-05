@@ -38,5 +38,110 @@
                 "response": "That's a great competitive viable choice"
 	    }
         ]
+    },
+    {
+        "question": "What is the best music genre?",
+        "answers": [
+        {
+            "text": "42",
+            "effect": 1,
+            "response": "Lol, no! :D"
+        },
+        {
+            "text": "nightcore!",
+            "effect": 2,
+            "You are damn right! *starts dancing harder than ever*"
+        },
+            "text": "hästen är påoängen",
+            "effect": -3,
+            "response": "That's not even remotely funny!"
+        ]
+    },
+    {
+        "question": "What is the difference between a duck?" [
+        "answers": [
+            {
+                "text": "and...?",
+                "effect": 2,
+                "response": "..."
+            },
+            {
+                "text": "there isn't!",
+                "effect": -2,
+                "response": "..."
+            },
+            {
+                "text": "the sadle.",
+                "effect": -1,
+                "response": "..."
+            }
+        ]
+    },
+    {
+        "question": "Hästen är på-p-po...ängen!",
+        "answers": [
+            {
+                "text": "Vad är på ängen?",
+                "effect": -1,
+                "reponse": "hästen"
+            },
+            {
+                "text": "Kan det vara hästen?",
+                "effect": 2,
+                "response": "...på ängen?"
+            },
+            {
+                "text": "Vad är poängen?",
+                "effect": -1,
+                "response": "hästen!!"
+            },
+            {
+                "text": "'neigh'",
+                "effect": -3,
+                "response": "gallops off like a gaselle... and back like a horse"
+            }
+            
+        ]
+    },
+    {
+        "question": "Do you know many quads you need to make the original N64 logo?",
+        "answers": [
+            {
+                "text": "What is a quad?",
+                "effect": -2,
+                "response": "..."
+            },
+            {
+                "text": "How many?!",
+                "effect": 2,
+                "response": "It's 64! *smiles*"
+            }
+        ]
+    },
+    {
+        "question": "Which is your favourite pokemon?",
+        "answers": [
+            {
+                "text": "red",
+                "effect": 2,
+                "response": ""
+            },
+            {
+                "text": "green",
+                "effect": 2,
+                "response": ""
+            },
+            {
+                "text": "silver",
+                "effect": 2,
+                "response": ""
+            },
+            {
+                "text": "orange",
+                "effect": -2,
+                "response": ""
+            }
+        ]
     }
+    
 ]
