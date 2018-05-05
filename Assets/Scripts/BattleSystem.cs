@@ -6,8 +6,10 @@ using Newtonsoft.Json;
 
 public class BattleSystem : MonoBehaviour {
 
-	public TextAsset[] _questions = new TextAsset[1]; //all questions files 0=nerd
-    Question[] nerd_questions;
+	public TextAsset[] greetingFiles = new TextAsset[System.Enum.GetValues (typeof(EnemyType)).Length];
+
+	public TextAsset[] questionFiles = new TextAsset[System.Enum.GetValues(typeof(EnemyType)).Length];
+	List<Question>[] questions = new List<Question>[System.Enum.GetValues(typeof(EnemyType)).Length];
     private Answer[] answers;   //currently shown answers
 
 
@@ -17,17 +19,22 @@ public class BattleSystem : MonoBehaviour {
 
 	private List<Button> _buttons;
 	private int currentChoice = 0;
-	private bool buttonsCreated = false;
 
     public BattlePlayer player;
 
 
-	private EnemyType currentEnemyType = EnemyType.NERD;
+	private EnemyType currentEnemyType = EnemyType.NERD; // TODO: get from elsewhere
 
 	// Use this for initialization
 	void Start () {
-
-        nerd_questions = JsonConvert.DeserializeObject<Question[]>(_questions[0].text);
+		foreach (EnemyType type in System.Enum.GetValues(typeof(EnemyType))) {
+			if (questionFiles [(int)type] == null) {
+				Debug.Log ("No question file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
+				questions [(int)type] = null;
+			} else {
+				questions [(int)type] = new List<Question> (JsonConvert.DeserializeObject<Question[]> (questionFiles [(int)type].text));
+			}
+		}
 
 		_buttons = new List<Button>();
 
@@ -69,24 +76,27 @@ public class BattleSystem : MonoBehaviour {
 				Destroy(button.gameObject);
 			}
 			_buttons.Clear();
-			buttonsCreated = false;
 		}
 	}
 
 	void CreateButtons()
 	{
-		Question[] questions;
+		List<Question> encounterQuestions = questions[(int)currentEnemyType];
 
-		switch (currentEnemyType) {
-		case EnemyType.NERD:
-            questions = nerd_questions;
-			break;
-		default:
-			throw new UnityException ("ENEMY_TYPE_ERROR");
+		Question question;
+		if (encounterQuestions == null || encounterQuestions.Count == 0) {
+			Debug.Log ("Found no questions when creating buttons. Creating a dummy question.");
+			question = new Question ();
+			Answer a = new Answer ();
+			a.effect = 0;
+			a.response = "NO RESPONSE!!!";
+			a.text = "NO ANSWER!!!";
+			question.question = "NO QUESTION FOUND!!!";
+			question.answers = new Answer[] { a };
+		} else {
+			question = encounterQuestions [Random.Range (0, questions.Length)];
 		}
-
-        Question question = questions[Random.Range(0, questions.Length)];
-        text.text = question.question; // TODO: Nåt bättre
+        text.text = question.question;
         answers = question.answers;
 
 		// Shuffle the list so the options are presented in a rondom order.
@@ -108,7 +118,6 @@ public class BattleSystem : MonoBehaviour {
 				button.GetComponentInChildren<Text> ().text = answers[i].text;
 			}
 		}
-		buttonsCreated = true;
 	}
 
 	public void SetActiveButton(Button btn)
