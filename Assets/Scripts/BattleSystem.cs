@@ -23,6 +23,7 @@ public class BattleSystem : MonoBehaviour {
 
     public BattlePlayer player;
 
+	public int MAX_ANSWER_OPTIONS; // Not sure the interface supports too many answers.
 
 	private EnemyType currentEnemyType = EnemyType.NERD; // TODO: get from elsewhere
 
@@ -121,7 +122,7 @@ public class BattleSystem : MonoBehaviour {
 			answers [n] = tmp;
 		}
 
-		for (int i = 0; i < answers.Length; i++)
+		for (int i = 0; i < answers.Length && i < MAX_ANSWER_OPTIONS; i++)
 		{
 			Button button = Instantiate<Button>(buttonPrefab);
 			if (button != null)

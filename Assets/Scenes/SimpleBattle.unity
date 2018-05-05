@@ -714,6 +714,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 114844450832132964, guid: 9dd9a25141af25f49a87416d1ea827c2,
     type: 2}
   player: {fileID: 30833125}
+  MAX_ANSWER_OPTIONS: 5
 --- !u!1 &1930651572
 GameObject:
   m_ObjectHideFlags: 0
