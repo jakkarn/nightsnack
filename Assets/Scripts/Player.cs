@@ -41,9 +41,11 @@ public class Player : MonoBehaviour {
 
             if (attention.Attention >= 100)
             {
-                Debug.Log(string.Format("ENCOUNTER - {0}", type));
+                //Debug.Log(string.Format("ENCOUNTER - {0}", type));
+                Global.encounter = type;
                 Application.LoadLevel("SimpleBattle");
                 attention.Attention = 0;
+                Global.encounter = EnemyType.NONE;
             }
         }
 	}

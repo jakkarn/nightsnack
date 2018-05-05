@@ -134,7 +134,7 @@ public class BattleSystem : MonoBehaviour {
 
 
 public enum EnemyType {
-	NERD, COOL_KID, GOTH
+	NERD, COOL_KID, GOTH, NONE
 }
 
 public class Answer
