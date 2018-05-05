@@ -33,6 +33,7 @@ public class BattleSystem : MonoBehaviour {
 				Debug.Log ("No question file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
 				questions [(int)type] = null;
 			} else {
+				Debug.Log("Enemy type " + System.Enum.GetName (typeof(EnemyType), type) + " uses questions file " + questionFiles [(int)type].name);
 				questions [(int)type] = new List<Question> (JsonConvert.DeserializeObject<Question[]> (questionFiles [(int)type].text));
 			}
 
@@ -41,6 +42,7 @@ public class BattleSystem : MonoBehaviour {
 				greetings [(int)type] = new List<string> ();
 				greetings [(int)type].Add ("'ello, and what are you after then?");
 			} else {
+				Debug.Log("Enemy type " + System.Enum.GetName (typeof(EnemyType), type) + " uses greetings file " + greetingFiles [(int)type].name);
 				greetings [(int)type] = new List<string> (questionFiles [(int)type].text.Split (new char[] { '\n' }));
 			}
 		}
