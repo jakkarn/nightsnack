@@ -29,10 +29,12 @@ public class BattleSystem : MonoBehaviour {
 
 	public int MAX_ANSWER_OPTIONS; // Not sure the interface supports too many answers.
 
-	private EnemyType currentEnemyType = EnemyType.NERD; // TODO: get from elsewhere
+	private EnemyType currentEnemyType;
 
 	// Use this for initialization
 	void Start () {
+		currentEnemyType = Global.encounter;
+
 		// If there are too many files, that's kinda fine. But if there are too few, we need to know ASAP.
 		UnityEngine.Assertions.Assert.IsTrue (questionFiles.Length >= numEnemyTypes);
 		UnityEngine.Assertions.Assert.IsTrue (greetingFiles.Length >= numEnemyTypes);
@@ -110,7 +112,7 @@ public class BattleSystem : MonoBehaviour {
 
 		Question question;
 		if (encounterQuestions == null || encounterQuestions.Count == 0) {
-			Debug.Log ("Found no questions when creating buttons. Creating a dummy question.");
+			Debug.Log ("Found no questions when creating buttons for type " + currentEnemyType + ". Creating a dummy question.");
 			question = new Question ();
 			Answer a = new Answer ();
 			a.effect = 0;

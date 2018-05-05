@@ -33,6 +33,7 @@ public class Player : MonoBehaviour {
     }
 
     void Update () {
+		Global.encounter = EnemyType.NONE; // Reset on the update AFTER returning from a battle.
 
         foreach (EnemyType type in Enum.GetValues(typeof(EnemyType)))
         {
@@ -45,7 +46,6 @@ public class Player : MonoBehaviour {
                 Global.encounter = type;
 				SceneManager.LoadScene ("SimpleBattle");
                 attention.Attention = 0;
-                Global.encounter = EnemyType.NONE;
             }
         }
 	}
