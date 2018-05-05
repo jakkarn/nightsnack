@@ -22,4 +22,6 @@ public class GlobalScript : MonoBehaviour
 public class Global
 {
     public static EnemyType encounter = EnemyType.NONE;
+    public static int charisma = 0;
+    public static int numFriendsMade = 0;
 }

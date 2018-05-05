@@ -18,5 +18,18 @@ public class BattlePlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         charismaMeter.text = charisma.ToString();
+
+        if(charisma < enemyThreshold)
+        {
+            Global.charisma += charisma;
+            Application.LoadLevel("Overworld");
+
+        }
+        else if(charisma > friendThreshold)
+        {
+            Global.numFriendsMade++;
+            Global.charisma += charisma;
+            Application.LoadLevel("Overworld"); 
+        }
 	}
 }

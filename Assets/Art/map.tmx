@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="25" height="25" tilewidth="32" tileheight="32" infinite="0" nextobjectid="21">
+ <tileset firstgid="1" name="Dance floor" tilewidth="32" tileheight="32" tilecount="9" columns="3">
+  <image source="Dance/Floor green.png" width="96" height="96"/>
+ </tileset>
+ <tileset firstgid="10" name="Plantor och bord" tilewidth="32" tileheight="32" tilecount="126" columns="14">
+  <image source="Tileset/roguelikeIndoor_transparent.png" width="457" height="305"/>
+ </tileset>
+ <layer name="Dance floor" width="25" height="25">
+  <data encoding="base64" compression="zlib">
+   eJztzcsJACAQxNDxr/037IANLOxJSOCdIxFJxWpASzy6jYDJgwePbx/LdsBJPIjodQGuAwKV
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="5" x="193" y="194" width="63" height="60.6667"/>
+  <object id="12" x="160.5" y="184" width="22" height="359"/>
+  <object id="17" x="182.75" y="524.125" width="328.75" height="18.5"/>
+  <object id="19" x="492.25" y="161.125" width="19.375" height="362.5"/>
+  <object id="20" x="160.625" y="160.375" width="329.375" height="22.75"/>
+ </objectgroup>
+</map>
