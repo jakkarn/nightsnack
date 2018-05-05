@@ -1,32 +1,42 @@
 [
     {
-        "question": "Question 1?",
+        "question": "Who is your favorite Game of Thrones character?",
         "answers": [
             {
-                "text": "Answer 1",
-                "effect": 2,
-                "response": ""
+                "text": "Boromir, it's a shame he got killed",
+                "effect": +2,
+                "response": "Yeah, I know. He always dies first."
             },
             {
-                "text": "Answer 2",
+                "text": "Voldemort was a great main antagonist",
                 "effect": -2,
-                "response": ""
-            }
+                "response": "He has no nose!"
+            },
+	    {
+		"text": "Daenerys Targaryen would make a great Queen",
+                "effect": +1,
+                "response": "I ship Daenerys with Jon Snow!"
+	    }
         ]
     },
     {
-        "question": "Question 2?",
+        "question": "What's your favorite pokemon?",
         "answers": [
             {
-                "text": "Answer 1",
-                "effect": 2,
-                "response": ""
+                "text": "Agumon",
+                "effect": -2,
+                "response": "That's a digimon"
             },
             {
-                "text": "Answer 2",
-                "effect": -2,
-                "response": ""
-            }
+                "text": "Pikachu!",
+                "effect": +1,
+                "response": "Yeah, pikachu is so cute!"
+            },
+	    {
+		"text": "Landorus",
+                "effect": +2,
+                "response": "That's a great competitive viable choice"
+	    }
         ]
-    },
+    }
 ]
