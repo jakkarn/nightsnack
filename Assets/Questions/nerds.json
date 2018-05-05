@@ -1,0 +1,32 @@
+[
+    {
+        "question": "Question 1?",
+        "answers": [
+            {
+                "text": "Answer 1",
+                "effect": 2,
+                "response": ""
+            },
+            {
+                "text": "Answer 2",
+                "effect": -2,
+                "response": ""
+            }
+        ]
+    },
+    {
+        "question": "Question 2?",
+        "answers": [
+            {
+                "text": "Answer 1",
+                "effect": 2,
+                "response": ""
+            },
+            {
+                "text": "Answer 2",
+                "effect": -2,
+                "response": ""
+            }
+        ]
+    },
+]

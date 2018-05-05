@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json;
 
 public class BattleSystem : MonoBehaviour {
 
@@ -24,6 +25,11 @@ public class BattleSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        var data = JsonConvert.DeserializeObject<Question[]>(NerdInsults.text);
+        string question = data[0].question;
+        Debug.Log(question);
+
 		_buttons = new List<Button>();
 		text.text = "Choose a line"; // TODO: Nåt bättre
 	}
@@ -124,4 +130,17 @@ public class BattleSystem : MonoBehaviour {
 
 public enum EnemyType {
 	NERD ,COOL_KID, GOTH
+}
+
+public class Answer
+{
+    public string text { get; set; }
+    public int effect { get; set; }
+    public string response { get; set; }
+}
+public class Question
+{
+    public string question { get; set; }
+    public Answer[] answers { get; set; }
+
 }
