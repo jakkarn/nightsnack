@@ -10,9 +10,10 @@ public class BattleSystem : MonoBehaviour {
 
 
     public TextAsset[] greetingFiles;
-	List<string>[] greetings;
-	public TextAsset[] questionFiles;
-	List<Question>[] questions;
+    public TextAsset[] questionFiles;
+
+    List<string>[] greetings = new List<string>[numEnemyTypes];
+	List<Question>[] questions = new List<Question>[numEnemyTypes];
     private Answer[] answers;   //currently shown answers
 
 
@@ -31,11 +32,6 @@ public class BattleSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-        greetingFiles = new TextAsset[numEnemyTypes];
-        greetings = new List<string>[numEnemyTypes];
-        questionFiles = new TextAsset[numEnemyTypes];
-        questions = new List<Question>[numEnemyTypes];
 
 		foreach (EnemyType type in System.Enum.GetValues(typeof(EnemyType))) {
 			if (questionFiles [(int)type] == null) {
