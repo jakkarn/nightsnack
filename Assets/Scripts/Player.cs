@@ -9,10 +9,6 @@ public class Player : MonoBehaviour {
     public RectTransform attentionMeterPrefab;
     public RectTransform meterRoot;
 
-    //private Dictionary<EnemyType, float> attentions;
-    //private Dictionary<EnemyType, float> modifiers;
-    //private Dictionary<EnemyType, Text> meters;
-
     private Dictionary<EnemyType, EnemyAttention> attentions;
 
     private void Start()
