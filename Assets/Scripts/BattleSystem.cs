@@ -8,8 +8,10 @@ public class BattleSystem : MonoBehaviour {
 
 	public TextAsset[] _questions = new TextAsset[1]; //all questions files 0=nerd
     Question[] nerd_questions;
+    private Answer[] answers;   //currently shown answers
 
-	public RectTransform uiRoot;
+
+    public RectTransform uiRoot;
 	public Text text;
 	public Button buttonPrefab;
 
@@ -17,7 +19,7 @@ public class BattleSystem : MonoBehaviour {
 	private int currentChoice = 0;
 	private bool buttonsCreated = false;
 
-    public GameObject player;
+    public BattlePlayer player;
 
 
 	private EnemyType currentEnemyType = EnemyType.NERD;
@@ -35,8 +37,9 @@ public class BattleSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit"))
 		{
+            player.charisma += answers[currentChoice].effect;
 			ResetButtons();
 			currentChoice = 0;
 			text.text = "";
@@ -73,14 +76,13 @@ public class BattleSystem : MonoBehaviour {
 	void CreateButtons()
 	{
 		Question[] questions;
-        Answer[]  answers;
 
 		switch (currentEnemyType) {
 		case EnemyType.NERD:
             questions = nerd_questions;
 			break;
 		default:
-			throw new UnityException ("fuq");
+			throw new UnityException ("ENEMY_TYPE_ERROR");
 		}
 
         Question question = questions[Random.Range(0, questions.Length)];
