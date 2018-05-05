@@ -33,7 +33,9 @@ public class BattleSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		// If there are too many files, that's kinda fine. But if there are too few, we need to know ASAP.
+		UnityEngine.Assertions.Assert.IsTrue (questionFiles.Length >= numEnemyTypes);
+		UnityEngine.Assertions.Assert.IsTrue (greetingFiles.Length >= numEnemyTypes);
 		foreach (EnemyType type in System.Enum.GetValues(typeof(EnemyType))) {
 			if (questionFiles [(int)type] == null) {
 				Debug.Log ("No question file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
