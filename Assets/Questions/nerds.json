@@ -33,7 +33,7 @@
                 "response": "Yeah, pikachu is so cute!"
             },
 	    {
-		"text": "Landorus",
+		        "text": "Landorus",
                 "effect": 2,
                 "response": "That's a great competitive viable choice"
 	    }
@@ -50,15 +50,17 @@
         {
             "text": "nightcore!",
             "effect": 2,
-            "You are damn right! *starts dancing harder than ever*"
+            "response": "You are damn right! *starts dancing harder than ever*"
         },
+        {
             "text": "hästen är påoängen",
             "effect": -3,
             "response": "That's not even remotely funny!"
+        }
         ]
     },
     {
-        "question": "What is the difference between a duck?" [
+        "question": "What is the difference between a duck?",
         "answers": [
             {
                 "text": "and...?",
@@ -100,7 +102,7 @@
                 "effect": -3,
                 "response": "gallops off like a gaselle... and back like a horse"
             }
-            
+
         ]
     },
     {
@@ -124,24 +126,24 @@
             {
                 "text": "red",
                 "effect": 2,
-                "response": ""
+                "response": "Haaaah, good choice!"
             },
             {
                 "text": "green",
                 "effect": 2,
-                "response": ""
+                "response": "Yeaaaah, man!!!"
             },
             {
                 "text": "silver",
                 "effect": 2,
-                "response": ""
+                "response": "That's my favourite too!"
             },
             {
                 "text": "orange",
                 "effect": -2,
-                "response": ""
+                "response": "That doesn't make any sense."
             }
         ]
     }
-    
+
 ]
