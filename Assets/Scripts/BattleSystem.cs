@@ -39,24 +39,24 @@ public class BattleSystem : MonoBehaviour {
 		UnityEngine.Assertions.Assert.IsTrue (questionFiles.Length >= numEnemyTypes);
 		UnityEngine.Assertions.Assert.IsTrue (greetingFiles.Length >= numEnemyTypes);
 		foreach (EnemyType type in System.Enum.GetValues(typeof(EnemyType))) {
-			if (questionFiles [(int)type] == null) {
+			if (questionFiles [(byte)type] == null) {
 				Debug.Log ("No question file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
-				questions [(int)type] = null;
+				questions [(byte)type] = null;
 			} else {
-				Debug.Log("Enemy type " + System.Enum.GetName (typeof(EnemyType), type) + " uses questions file " + questionFiles [(int)type].name);
-				questions [(int)type] = new List<Question> (JsonConvert.DeserializeObject<Question[]> (questionFiles [(int)type].text));
+				Debug.Log("Enemy type " + System.Enum.GetName (typeof(EnemyType), type) + " uses questions file " + questionFiles [(byte)type].name);
+				questions [(byte)type] = new List<Question> (JsonConvert.DeserializeObject<Question[]> (questionFiles [(byte)type].text));
 			}
 
             Debug.Log(numEnemyTypes);
             Debug.Log(greetingFiles.Length);
 
-            if (greetingFiles [(int)type] == null) {
+            if (greetingFiles [(byte)type] == null) {
 				Debug.Log ("No greeting file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
-				greetings [(int)type] = new List<string> ();
-				greetings [(int)type].Add ("'ello, and what are you after then?");
+				greetings [(byte)type] = new List<string> ();
+				greetings [(byte)type].Add ("'ello, and what are you after then?");
 			} else {
-				Debug.Log("Enemy type " + System.Enum.GetName (typeof(EnemyType), type) + " uses greetings file " + greetingFiles [(int)type].name);
-				greetings [(int)type] = new List<string> (questionFiles [(int)type].text.Split (new char[] { '\n' }));
+				Debug.Log("Enemy type " + System.Enum.GetName (typeof(EnemyType), type) + " uses greetings file " + greetingFiles [(byte)type].name);
+				greetings [(byte)type] = new List<string> (questionFiles [(byte)type].text.Split (new char[] { '\n' }));
 			}
 		}
 
@@ -64,7 +64,7 @@ public class BattleSystem : MonoBehaviour {
 
 		CreateButtons ();
 
-		resposeText.text = greetings [(int)currentEnemyType] [Random.Range (0, greetings [(int)currentEnemyType].Count)];
+		resposeText.text = greetings [(byte)currentEnemyType] [Random.Range (0, greetings [(byte)currentEnemyType].Count)];
 	}
 
 	// Update is called once per frame
@@ -108,7 +108,7 @@ public class BattleSystem : MonoBehaviour {
 
 	void CreateButtons()
 	{
-		List<Question> encounterQuestions = questions[(int)currentEnemyType];
+		List<Question> encounterQuestions = questions[(byte)currentEnemyType];
 
 		Question question;
 		if (encounterQuestions == null || encounterQuestions.Count == 0) {
@@ -160,8 +160,11 @@ public class BattleSystem : MonoBehaviour {
 }
 
 
-public enum EnemyType {
-	NERD, COOL_KID, GOTH, NONE
+public enum EnemyType : byte {
+	NERD = 0,
+	COOL_KID = 1,
+	GOTH = 2,
+	NONE = 3
 }
 
 public class Answer
