@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     private void Start()
     {
         attentions = new Dictionary<EnemyType, EnemyAttention>();
+
         foreach (EnemyType type in Enum.GetValues(typeof(EnemyType)))
         {
             var meter = Instantiate<RectTransform>(attentionMeterPrefab);
@@ -33,19 +34,21 @@ public class Player : MonoBehaviour {
     }
 
     void Update () {
-		Global.encounter = EnemyType.NONE; // Reset on the update AFTER returning from a battle.
 
         foreach (EnemyType type in Enum.GetValues(typeof(EnemyType)))
         {
             var attention = attentions[type];
             attention.Attention += passiveAttentionGain + attention.Modifier;
-            attention.Text.text = attention.Attention.ToString();
+            attention.Text.text = ((int)attention.Attention).ToString();
 
             if (attention.Attention >= 100)
             {
                 Global.encounter = type;
 				SceneManager.LoadScene ("SimpleBattle");
-                attention.Attention = 0;
+
+                /* reset all attentions on battle */
+                foreach (EnemyType type2 in Enum.GetValues(typeof(EnemyType)))
+                    attentions[type2].Attention = 0;
             }
         }
 	}
