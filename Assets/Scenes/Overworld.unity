@@ -3363,7 +3363,7 @@ Prefab:
     - target: {fileID: 212913525017078058, guid: a12644b2e010cf64d8f38c282921af18,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4078783720899964, guid: a12644b2e010cf64d8f38c282921af18, type: 2}
       propertyPath: m_LocalScale.z
@@ -4897,7 +4897,7 @@ Prefab:
     - target: {fileID: 212913525017078058, guid: a12644b2e010cf64d8f38c282921af18,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 58992261734781190, guid: a12644b2e010cf64d8f38c282921af18,
         type: 2}
@@ -6356,7 +6356,7 @@ Prefab:
     - target: {fileID: 212913525017078058, guid: a12644b2e010cf64d8f38c282921af18,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12644b2e010cf64d8f38c282921af18, type: 2}
@@ -6788,7 +6788,7 @@ Prefab:
     - target: {fileID: 212913525017078058, guid: a12644b2e010cf64d8f38c282921af18,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4078783720899964, guid: a12644b2e010cf64d8f38c282921af18, type: 2}
       propertyPath: m_LocalScale.z
