@@ -22,7 +22,6 @@ public class CharismaMeter : MonoBehaviour {
 
 	public void changeValue(int delta) {
 		slider.value += delta;
-		Color[] colors = new Color[] { Color.red, Color.white, Color.cyan };
 
 		Debug.Log (delta);
 
