@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattlePlayer : MonoBehaviour {
 
@@ -23,14 +24,14 @@ public class BattlePlayer : MonoBehaviour {
         if(charisma < enemyThreshold)
         {
             Global.charisma += charisma;
-            Application.LoadLevel("Overworld");
+			SceneManager.LoadScene("Overworld");
 
         }
         else if(charisma > friendThreshold)
         {
             Global.numFriendsMade++;
             Global.charisma += charisma;
-            Application.LoadLevel("Overworld"); 
+            SceneManager.LoadScene("Overworld"); 
         }
 	}
 }
