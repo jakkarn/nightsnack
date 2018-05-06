@@ -37,6 +37,13 @@ public class Player : MonoBehaviour {
 
         foreach (EnemyType type in Enum.GetValues(typeof(EnemyType)))
         {
+            /* restore player position */
+            if (Global.hasBattled)
+            {
+                this.transform.position = Global.playerPos;
+                Global.hasBattled = false;
+            }
+
             var attention = attentions[type];
             attention.Attention += passiveAttentionGain + attention.Modifier;
             attention.Text.text = ((int)attention.Attention).ToString();
@@ -45,6 +52,8 @@ public class Player : MonoBehaviour {
             {
                 Global.encounter = type;
 				SceneManager.LoadScene ("SimpleBattle");
+                Global.hasBattled = true; // is run before battle is loaded!
+                Global.playerPos = new Vector3(this.transform.position.x, this.transform.position.y);
 
                 /* reset all attentions on battle */
                 foreach (EnemyType type2 in Enum.GetValues(typeof(EnemyType)))
