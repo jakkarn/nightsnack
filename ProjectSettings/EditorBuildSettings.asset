@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SimpleBattle.unity
     guid: ff7836a16f4a29e4a82a394fdcfce92d
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: b83ecb5df02c9da43adc0250f1fa9fcb
   m_configObjects: {}
