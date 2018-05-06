@@ -24,6 +24,7 @@ public class BattlePlayer : MonoBehaviour {
         if(charisma < enemyThreshold)
         {
             Global.charisma += charisma;
+            Global.numFriendsMade = Global.numFriendsMade >= 1 ? Global.numFriendsMade - 1 : Global.numFriendsMade;
 			SceneManager.LoadScene("Overworld");
 
         }
