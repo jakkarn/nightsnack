@@ -1,0 +1,83 @@
+[
+    {
+        "question": "Did you know that you should only shower for five minutes?",
+        "answers": [
+            {
+                "text": "Did you know that I don't care?",
+                "effect": 2,
+                "response": "Then I will make you care!"
+            },
+            {
+                "text": "*Go to the nearest faucet and let it spill water until it overflows*",
+                "effect": -2,
+                "response": "That's unreasonable!"
+            },
+	    {
+		"text": "I piss in the shower to save flushing water",
+                "effect": 1,
+                "response": "Oh, that's great I guess..."
+	    }
+        ]
+    },
+    {
+        "question": "We should walk or take the bicycle to work!",
+        "answers": [
+            {
+                "text": "I puncture cars wheels to prevent them from driving",
+                "effect": -2,
+                "response": "*looks slightly scared*"
+            },
+            {
+                "text": "I jog to school to get a workout every morning",
+                "effect": 2,
+                "response": "I want to start exercising. I might join you."
+            },
+	    {
+		"text": "I take the bus whenever I can",
+                "effect": 1,
+                "response": "That's a good alternative"
+	    }
+        ]
+    },    
+    {
+        "question": "People who don't properly dispose of their trash are garbage",
+        "answers": [
+            {
+                "text": "It doesn't matter if I'm garbage. It's called garbage can, not garbage cannot.",
+                "effect": -2,
+                "response": "Wait, what?"
+            },
+            {
+                "text": "I always make sure to pick up garbage I find on the floor",
+                "effect": 2,
+                "response": "That's so good of you!"
+            },
+	    {
+		"text": "I'm a garbage collector at day and a garbage artist at night",
+                "effect": 1,
+                "response": "I guess it still counts as recycling"
+	    }
+        ]
+    },
+    {
+	
+        "question": "It isn't good for the environment to eat too much meat.",
+        "answers": [
+            {
+                "text": "I have been trying to eat more vegetarian food recently",
+                "effect": 1,
+                "response": "That's a great initiative!"
+            },
+            {
+                "text": "I usually sacrifice my cattle in the name of satan",
+                "effect": 2,
+                "response": "That sounds metal as fuck!"
+            },
+	    {
+		"text": "I like my burgers with two patties and two slices of bacon",
+                "effect": -2,
+                "response": "That's not sustainable!"
+	    }
+        ]
+    }
+]
