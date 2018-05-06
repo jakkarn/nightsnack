@@ -9,7 +9,6 @@ public class Player : MonoBehaviour {
     public float passiveAttentionGain = 0.01f;
     public RectTransform attentionMeterPrefab;
     public RectTransform meterRoot;
-
     private Dictionary<EnemyType, EnemyAttention> attentions;
 
     private void Start()
@@ -35,6 +34,7 @@ public class Player : MonoBehaviour {
 
     void Update () {
 
+        /* encounter battle mechanics */
         foreach (EnemyType type in Enum.GetValues(typeof(EnemyType)))
         {
             /* restore player position */
@@ -60,6 +60,8 @@ public class Player : MonoBehaviour {
                     attentions[type2].Attention = 0;
             }
         }
+
+        
 	}
 
     public void SetAttentionModifier(EnemyType type, float value)
