@@ -35,7 +35,7 @@ public class CharismaMeter : MonoBehaviour {
 			color = Color.white;
 		} else {
 			writeme = "-";
-			color = Color.red;
+			color = Color.white;
 		}
 		writeme += ((int)Mathf.Abs (delta)).ToString ();
 
