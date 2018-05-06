@@ -9,13 +9,13 @@
             },
             {
                 "text": "Of course, it's november 13th!",
-                "effect": +2,
+                "effect": 2,
                 "response": "That's my favorite day of the year!"
             },
 	    {
-		"text": "Mickey schmicky, I hope you choke on a sticky"
+		"text": "Mickey schmicky, I hope you choke on a sticky",
 		"effect": -2,
-		"response": "That's so rude!" 
+		"response": "That's so rude!"
 	    }
         ]
     },
@@ -53,13 +53,13 @@
                 "response": "WOow *Gets taken aback*"
             },
 	    {
-		"text": "Disney World is the best!"
+		"text": "Disney World is the best!",
 		"effect": 2,
-		"response": "I know right?!?" 
+		"response": "I know right?!?"
 	    }
         ]
     },
-    { 
+    {
             "question": "What's your favorite Disney movie?",
         "answers": [
             {
@@ -73,11 +73,11 @@
                 "response": "Pokémon is not made by Disney!"
             },
 	    {
-		"text": "Frozen is the best movie of all time!"
+		"text": "Frozen is the best movie of all time!",
 		"effect": 2,
 		"response": "I know right?!?"
 	    }
         ]
     }
-    
+
 ]
