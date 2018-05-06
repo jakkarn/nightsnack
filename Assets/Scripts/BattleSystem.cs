@@ -48,7 +48,7 @@ public class BattleSystem : MonoBehaviour {
 			if (greetingFiles [(byte)type] == null) {
 				Debug.Log ("No greeting file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
 				greetings [(byte)type] = new List<string> ();
-				greetings [(byte)type].Add ("'ello, and what are you after then?");
+				greetings [(byte)type].Add ("Hello there!");
 			} else {
 				Debug.Log("Enemy type " + System.Enum.GetName (typeof(EnemyType), type) + " uses greetings file " + greetingFiles [(byte)type].name);
 				greetings [(byte)type] = new List<string> (questionFiles [(byte)type].text.Split (new char[] { '\n' }));
@@ -167,7 +167,7 @@ public class BattleSystem : MonoBehaviour {
 			btn.transform.SetParent (uiRoot);
 			btn.GetComponentInChildren<Text> ().text = "Continue";
 
-			_buttons.Add (btn);
+            _buttons.Add (btn);
 			return;
 		} else {
 			answers = question.answers;

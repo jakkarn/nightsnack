@@ -13,7 +13,10 @@ public class Win : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        
+        if(Global.numFriendsMade >= 5)
+        {
+            SceneManager.LoadScene("Lose");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
