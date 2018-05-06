@@ -6014,6 +6014,11 @@ Prefab:
       propertyPath: m_Radius
       value: 0.08605933
       objectReference: {fileID: 0}
+    - target: {fileID: 114970360729484174, guid: a12644b2e010cf64d8f38c282921af18,
+        type: 2}
+      propertyPath: attentionGain
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12644b2e010cf64d8f38c282921af18, type: 2}
   m_IsPrefabParent: 0
