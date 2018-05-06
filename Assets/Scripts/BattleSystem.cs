@@ -67,14 +67,18 @@ public class BattleSystem : MonoBehaviour {
 		SetupFiles ();
 
 		textOutput.text = greetings [(byte)currentEnemyType] [Random.Range (0, greetings [(byte)currentEnemyType].Count)];
+
+		CreateButtons (null);
 	}
+
+	bool displayingQuestion = false;
 
 	// Update is called once per frame
 	void Update () {
-
         if (Input.GetButtonDown("Submit"))
 		{
-			if (_buttons.Count > 0) { // A button was pressed - process answer and display response.
+			Question newQuestion;
+			if (displayingQuestion) {
 				// Update charisma
 				player.charisma += answers [currentChoice].effect;
 				charismaMeter.changeValue (answers [currentChoice].effect);
@@ -82,36 +86,32 @@ public class BattleSystem : MonoBehaviour {
 				// Set response text
 				textOutput.text = answers [currentChoice].response;
 
-				// Reset buttons
-				ResetButtons ();
+				newQuestion = null; // Go to a non-question, creating only a "continue" button
+			} else {
+				// Get a random question
+				newQuestion = GetRandomQuestion (currentEnemyType);
 
-
-			} else { // There were no buttons - go to next question.
-
-				// Have the top button selected by default.
-				currentChoice = 0;
-
-				Question question = GetRandomQuestion (currentEnemyType);
-				textOutput.text = question.question;
-
-				// Create buttons based on new question
-				CreateButtons (question);
-
-				// Select the topmost button
-				if (_buttons.Count > 0)
-					_buttons [0].Select ();
-
+				// Display the query
+				textOutput.text = newQuestion.question;
 			}
-		}
+			displayingQuestion = !displayingQuestion;
 
-		if (Input.GetButtonDown("Up"))
-		{
-			currentChoice = Mathf.Max(currentChoice - 1, 0);
+			// Reset buttons
+			ResetButtons ();
+
+			// Create answer buttons or continue button.
+			CreateButtons (newQuestion);
+
+			// Select the top button
+			currentChoice = 0;
 			_buttons [currentChoice].Select ();
 		}
-		else if (Input.GetButtonDown("Down"))
-		{
-			currentChoice = Mathf.Min(currentChoice + 1, _buttons.Count - 1);
+
+		if (Input.GetButtonDown ("Up")) {
+			currentChoice = Mathf.Max (currentChoice - 1, 0);
+			_buttons [currentChoice].Select ();
+		} else if (Input.GetButtonDown ("Down")) {
+			currentChoice = Mathf.Min (currentChoice + 1, _buttons.Count - 1);
 			_buttons [currentChoice].Select ();
 		}
 	}
@@ -161,28 +161,31 @@ public class BattleSystem : MonoBehaviour {
 
 	void CreateButtons(Question question)
 	{
-		if (question == null)
+		if (question == null) {
+			Button btn = Instantiate<Button> (buttonPrefab);
+			btn.transform.SetParent (uiRoot);
+			buttonPrefab.GetComponentInChildren<Text> ().text = "Continue";
+
+			_buttons.Add (btn);
 			return;
-		
-        answers = question.answers;
+		} else {
+			answers = question.answers;
 
-		// Shuffle the list so the options are presented in a rondom order.
-		for (int n = answers.Length - 1; n > 0; --n)
-		{
-			int k = Random.Range (0, n+1);
-			Answer tmp = answers [k];
-			answers [k] = answers [n];
-			answers [n] = tmp;
-		}
+			// Shuffle the list so the options are presented in a rondom order.
+			for (int n = answers.Length - 1; n > 0; --n) {
+				int k = Random.Range (0, n + 1);
+				Answer tmp = answers [k];
+				answers [k] = answers [n];
+				answers [n] = tmp;
+			}
 
-		for (int i = 0; i < answers.Length && i < MAX_ANSWER_OPTIONS; i++)
-		{
-			Button button = Instantiate<Button>(buttonPrefab);
-			if (button != null)
-			{
-				_buttons.Add(button);
-				button.transform.SetParent(uiRoot);
-				button.GetComponentInChildren<Text> ().text = answers[i].text;
+			for (int i = 0; i < answers.Length && i < MAX_ANSWER_OPTIONS; i++) {
+				Button button = Instantiate<Button> (buttonPrefab);
+				if (button != null) {
+					_buttons.Add (button);
+					button.transform.SetParent (uiRoot);
+					button.GetComponentInChildren<Text> ().text = answers [i].text;
+				}
 			}
 		}
 	}
