@@ -1,0 +1,83 @@
+[
+    {
+        "question": "Do you know when it's Mickey Mouse's birthday?",
+        "answers": [
+            {
+                "text": "I hate Mickey and hope he dies for eating some tainted cheese alone and forgotten in a soiled bathroom",
+                "effect": -2,
+                "response": "That's so mean!"
+            },
+            {
+                "text": "Of course, it's november 13th!",
+                "effect": +2,
+                "response": "That's my favorite day of the year!"
+            },
+	    {
+		"text": "Mickey schmicky, I hope you choke on a sticky"
+		"effect": -2,
+		"response": "That's so rude!" 
+	    }
+        ]
+    },
+    {
+        "question": "Who is your favorite Disney princess?",
+        "answers": [
+            {
+                "text": "Fiona from Shrek is a great princess",
+                "effect": -2,
+                "response": "That's not Disney!"
+            },
+            {
+                "text": "Mulan is the only good princess I can think of",
+                "effect": 1,
+                "response": "That's a good choice"
+            },
+	    {
+                "text": "Let it go, let it go! Can't hold it back anymore!",
+                "effect": 2,
+                "response": "I love Frozen!"
+            }
+        ]
+    },
+    {
+	        "question": "What do you think of Disney?",
+        "answers": [
+            {
+                "text": "I miss their hand drawn movies",
+                "effect": 1,
+                "response": "Yeah, I know what you mean. I miss them too"
+            },
+            {
+                "text": "They ruined the Star Wars universe, REEEEEEEEEEEEEEEEEEE!",
+                "effect": -2,
+                "response": "WOow *Gets taken aback*"
+            },
+	    {
+		"text": "Disney World is the best!"
+		"effect": 2,
+		"response": "I know right?!?" 
+	    }
+        ]
+    },
+    { 
+            "question": "What's your favorite Disney movie?",
+        "answers": [
+            {
+                "text": "Spirited Away",
+                "effect": 1,
+                "response": "Disney made a good choice by distributing Ghiblis movies right?"
+            },
+            {
+                "text": "Pokémon 2000",
+                "effect": -2,
+                "response": "Pokémon is not made by Disney!"
+            },
+	    {
+		"text": "Frozen is the best movie of all time!"
+		"effect": 2,
+		"response": "I know right?!?"
+	    }
+        ]
+    }
+    
+]
