@@ -80,32 +80,6 @@
         ]
     },
     {
-        "question": "Hästen är på-p-po...ängen!",
-        "answers": [
-            {
-                "text": "Vad är på ängen?",
-                "effect": -1,
-                "reponse": "hästen"
-            },
-            {
-                "text": "Kan det vara hästen?",
-                "effect": 2,
-                "response": "...på ängen?"
-            },
-            {
-                "text": "Vad är poängen?",
-                "effect": -1,
-                "response": "hästen!!"
-            },
-            {
-                "text": "'neigh'",
-                "effect": -3,
-                "response": "gallops off like a gaselle... and back like a horse"
-            }
-
-        ]
-    },
-    {
         "question": "Do you know many quads you need to make the original N64 logo?",
         "answers": [
             {
@@ -121,7 +95,7 @@
         ]
     },
     {
-        "question": "Which is your favourite pokemon?",
+        "question": "Which is your favourite pokemon game?",
         "answers": [
             {
                 "text": "red",
@@ -146,7 +120,7 @@
         ]
     },
     {
-        "question": "Wood float on water... what also floats?",
+        "question": "Wood floats on water... what also floats?",
         "answers": [
             {
                 "text": "Very small rocks!",
@@ -179,13 +153,13 @@
                 "response": "Good!"
             },
             {
-                "text": "Because they can do fire magic",
+                "text": "Because they have fire magic",
                 "effect": -1,
                 "response": "What, no..."
             },
             {
-                "text": "They were scared of water and made themselves water resistant. A side-effect was that they got weak to fire.",
-                "effect": 1,
+                "text": "Because they have the sickest disses in town",
+                "effect": -2,
                 "response": "Could have been, but no..."
             },
             {
