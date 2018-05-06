@@ -69,6 +69,8 @@ public class BattleSystem : MonoBehaviour {
 		textOutput.text = greetings [(byte)currentEnemyType] [Random.Range (0, greetings [(byte)currentEnemyType].Count)];
 
 		CreateButtons (null);
+
+		_buttons [0].Select ();
 	}
 
 	bool displayingQuestion = false;
