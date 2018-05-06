@@ -42,27 +42,16 @@ public class CharismaMeter : MonoBehaviour {
 
 		charismaChange.color = color;
 		charismaChange.text = writeme;
-
-		expectedAlpha = 255;
 	}
 
-	private float expectedAlpha;
-
 	void Update() {
-		Color prevCol = charismaChange.color;
+		if (charismaChange.color.a <= 0)
+			return;
 
 		float fadeTime = 3;
-		float fadePerSecond = 255 / fadeTime;
-		float fadeThisFrame = Time.deltaTime * fadePerSecond;
-		expectedAlpha -= fadeThisFrame;
+		float fadeThisFrame = Time.deltaTime / fadeTime;
 
-		if (expectedAlpha <= 0) {
-			// Text has faded - deactivate.
-			charismaChange.text = "";
-		} else {
-			int alpha = (int)expectedAlpha;
-			Color newCol = new Color (prevCol.r, prevCol.g, prevCol.b, alpha);
-			charismaChange.color = newCol;
-		}
+		Color old = charismaChange.color;
+		charismaChange.color = new Color (old.r, old.g, old.b, old.a - fadeThisFrame);
 	}
 }
