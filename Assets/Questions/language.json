@@ -1,0 +1,89 @@
+[
+    {
+        "question": "Una cerveza por favor!",
+        "answers": [
+            {
+                "text": "*Hand over a beer*",
+                "effect": 2,
+                "response": "Muchas gracias amigo!"
+            },
+            {
+                "text": "*Put your hands up*",
+                "effect": 1,
+                "response": "*You get a double high five in spanish*"
+            },
+	    {
+		"text": "No",
+                "effect": -1,
+                "response": "*Cries in spanish*"
+	    }
+        ]
+    },
+    {
+        "question": "Katt åt...",
+        "answers": [
+            {
+                "text": "Stol",
+                "effect": -1,
+                "response": "Satt i halsen"
+            },
+            {
+                "text": "Linjal",
+                "effect": 2,
+                "response": "Blev mätt"
+            },
+	    {
+		"text": "Engelsk hund",
+                "effect": -2,
+                "response": "Dog"
+	    }
+        ]
+    },    
+    {
+        "question": "Hästen är på-p-po...ängen!",
+        "answers": [
+            {
+                "text": "Vad är på ängen?",
+                "effect": -1,
+                "reponse": "hästen"
+            },
+            {
+                "text": "Kan det vara hästen?",
+                "effect": 2,
+                "response": "...på ängen?"
+            },
+            {
+                "text": "Vad är poängen?",
+                "effect": -1,
+                "response": "hästen!!"
+            },
+            {
+                "text": "*neigh*",
+                "effect": -3,
+                "response": "*gallops off like a gaselle... and back like a horse*"
+            }
+
+        ]
+    },
+    {
+	
+        "question": "Whatchu sinc bout de comida mejicana?",
+        "answers": [
+            {
+                "text": "MY BURRITO IS BURNING AT HOME AND I CAN'T DO ANYTHING ABOUT IT!",
+                "effect": -5,
+                "response": "Hurri an seiv yurr burrito muchacho!!!"
+            },
+            {
+                "text": "English motherfucker, do you speak it?!",
+                "effect": -1,
+                "response": "Aim trayin tu lern, don bi min"
+            },
+	    {
+		"text": "I like Enchiladas!",
+                "effect": 2,
+                "response": "Gud chois!"
+	    }
+        ]
+    }
+]
