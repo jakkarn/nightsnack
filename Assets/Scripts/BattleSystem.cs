@@ -206,8 +206,7 @@ public class BattleSystem : MonoBehaviour {
 public enum EnemyType : byte {
 	NERD = 0,
 	COOL_KID = 1,
-	GOTH = 2,
-	NONE = 3
+	GOTH = 2
 }
 
 public class Answer
