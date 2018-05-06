@@ -43,5 +43,25 @@
                 "response": "n-no, I'm so sorry, I didn't mean it like that! I feel bad."
     	    }
         ]
+    },
+    {
+	        "question": "Let me show you a magic trick, bada bing bada boom!",
+        "answers": [
+            {
+                "text": "*Kick him on the stomach in sync with the boom*",
+                "effect": 1,
+                "response": "Ow, wow, that was a nice one"
+            },
+            {
+                "text": "Wow, where did you get those doves from?",
+                "effect": 2,
+                "response": "It's magic!"
+            },
+	        {
+		        "text": "I hate magic"
+		        "effect": -2,
+		        "response": "Aww" 
+            }
+        ]
     }
 ]
