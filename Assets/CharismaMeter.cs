@@ -22,38 +22,36 @@ public class CharismaMeter : MonoBehaviour {
 
 	public void changeValue(int delta) {
 		slider.value += delta;
-		char[] chars = new char[] { '-', '±', '+' };
 		Color[] colors = new Color[] { Color.red, Color.white, Color.cyan };
 
 		Debug.Log (delta);
 
-		string writeme = chars[1+(int)Mathf.Sign(delta)] + ((int)Mathf.Abs(delta)).ToString();
-		Debug.Log (writeme);
-		Color textcol = colors[1+(int)Mathf.Sign(delta)];
+		Color color;
+		string writeme;
+		if (delta > 0) {
+			writeme = "+";
+			color = Color.cyan;
+		} else if (delta == 0) {
+			writeme = "±";
+			color = Color.white;
+		} else {
+			writeme = "-";
+			color = Color.red;
+		}
+		writeme += ((int)Mathf.Abs (delta)).ToString ();
 
-		charismaChange.color = textcol;
+		charismaChange.color = color;
 		charismaChange.text = writeme;
-
-		expectedAlpha = 255;
 	}
 
-	private float expectedAlpha;
-
 	void Update() {
-		Color prevCol = charismaChange.color;
+		if (charismaChange.color.a <= 0)
+			return;
 
 		float fadeTime = 3;
-		float fadePerSecond = 255 / fadeTime;
-		float fadeThisFrame = Time.deltaTime * fadePerSecond;
-		expectedAlpha -= fadeThisFrame;
+		float fadeThisFrame = Time.deltaTime / fadeTime;
 
-		if (expectedAlpha <= 0) {
-			// Text has faded - deactivate.
-			charismaChange.text = "";
-		} else {
-			int alpha = (int)expectedAlpha;
-			Color newCol = new Color (prevCol.r, prevCol.g, prevCol.b, alpha);
-			charismaChange.color = newCol;
-		}
+		Color old = charismaChange.color;
+		charismaChange.color = new Color (old.r, old.g, old.b, old.a - fadeThisFrame);
 	}
 }

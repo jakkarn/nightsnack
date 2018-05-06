@@ -18,8 +18,7 @@ public class BattleSystem : MonoBehaviour {
 
 
     public RectTransform uiRoot;
-	public Text questionText;
-	public Text resposeText;
+	public Text textOutput;
 	public Button buttonPrefab;
 
 	private List<Button> _buttons = new List<Button>();
@@ -33,13 +32,7 @@ public class BattleSystem : MonoBehaviour {
 
 	public CharismaMeter charismaMeter;
 
-	// Use this for initialization
-	void Start () {
-		currentEnemyType = Global.encounter;
-
-		// If there are too many files, that's kinda fine. But if there are too few, we need to know ASAP.
-		UnityEngine.Assertions.Assert.IsTrue (questionFiles.Length >= numEnemyTypes);
-		UnityEngine.Assertions.Assert.IsTrue (greetingFiles.Length >= numEnemyTypes);
+	void SetupFiles() {
 		foreach (EnemyType type in System.Enum.GetValues(typeof(EnemyType))) {
 			if (questionFiles [(byte)type] == null) {
 				Debug.Log ("No question file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
@@ -49,10 +42,10 @@ public class BattleSystem : MonoBehaviour {
 				questions [(byte)type] = new List<Question> (JsonConvert.DeserializeObject<Question[]> (questionFiles [(byte)type].text));
 			}
 
-            Debug.Log(numEnemyTypes);
-            Debug.Log(greetingFiles.Length);
+			Debug.Log(numEnemyTypes);
+			Debug.Log(greetingFiles.Length);
 
-            if (greetingFiles [(byte)type] == null) {
+			if (greetingFiles [(byte)type] == null) {
 				Debug.Log ("No greeting file specified for enemy type " + System.Enum.GetName (typeof(EnemyType), type));
 				greetings [(byte)type] = new List<string> ();
 				greetings [(byte)type].Add ("'ello, and what are you after then?");
@@ -61,12 +54,19 @@ public class BattleSystem : MonoBehaviour {
 				greetings [(byte)type] = new List<string> (questionFiles [(byte)type].text.Split (new char[] { '\n' }));
 			}
 		}
+	}
 
-		_buttons = new List<Button>();
+	// Use this for initialization
+	void Start () {
+		currentEnemyType = Global.encounter;
 
-		CreateButtons ();
+		// If there are too many files, that's kinda fine. But if there are too few, we need to know ASAP.
+		UnityEngine.Assertions.Assert.IsTrue (questionFiles.Length >= numEnemyTypes);
+		UnityEngine.Assertions.Assert.IsTrue (greetingFiles.Length >= numEnemyTypes);
 
-		resposeText.text = greetings [(byte)currentEnemyType] [Random.Range (0, greetings [(byte)currentEnemyType].Count)];
+		SetupFiles ();
+
+		textOutput.text = greetings [(byte)currentEnemyType] [Random.Range (0, greetings [(byte)currentEnemyType].Count)];
 	}
 
 	// Update is called once per frame
@@ -74,26 +74,45 @@ public class BattleSystem : MonoBehaviour {
 
         if (Input.GetButtonDown("Submit"))
 		{
-            player.charisma += answers[currentChoice].effect;
-			charismaMeter.changeValue (answers[currentChoice].effect);
-			resposeText.text = answers [currentChoice].response;
-			ResetButtons();
-			currentChoice = 0;
-			questionText.text = "";
-			CreateButtons ();
-		}
+			if (_buttons.Count > 0) { // A button was pressed - process answer and display response.
+				// Update charisma
+				player.charisma += answers [currentChoice].effect;
+				charismaMeter.changeValue (answers [currentChoice].effect);
 
-		if (_buttons.Count > 0) {
-			_buttons [currentChoice].Select ();
+				// Set response text
+				textOutput.text = answers [currentChoice].response;
+
+				// Reset buttons
+				ResetButtons ();
+
+
+			} else { // There were no buttons - go to next question.
+
+				// Have the top button selected by default.
+				currentChoice = 0;
+
+				Question question = GetRandomQuestion (currentEnemyType);
+				textOutput.text = question.question;
+
+				// Create buttons based on new question
+				CreateButtons (question);
+
+				// Select the topmost button
+				if (_buttons.Count > 0)
+					_buttons [0].Select ();
+
+			}
 		}
 
 		if (Input.GetButtonDown("Up"))
 		{
 			currentChoice = Mathf.Max(currentChoice - 1, 0);
+			_buttons [currentChoice].Select ();
 		}
 		else if (Input.GetButtonDown("Down"))
 		{
 			currentChoice = Mathf.Min(currentChoice + 1, _buttons.Count - 1);
+			_buttons [currentChoice].Select ();
 		}
 	}
 
@@ -109,8 +128,7 @@ public class BattleSystem : MonoBehaviour {
 		}
 	}
 
-	void CreateButtons()
-	{
+	Question GetRandomQuestion(EnemyType type) {
 		List<Question> encounterQuestions = questions[(byte)currentEnemyType];
 
 		Question question;
@@ -137,7 +155,15 @@ public class BattleSystem : MonoBehaviour {
 		} else {
 			question = encounterQuestions [Random.Range (0, encounterQuestions.Count)];
 		}
-        questionText.text = question.question;
+
+		return question;
+	}
+
+	void CreateButtons(Question question)
+	{
+		if (question == null)
+			return;
+		
         answers = question.answers;
 
 		// Shuffle the list so the options are presented in a rondom order.
@@ -190,5 +216,4 @@ public class Question
 {
     public string question { get; set; }
     public Answer[] answers { get; set; }
-
 }
