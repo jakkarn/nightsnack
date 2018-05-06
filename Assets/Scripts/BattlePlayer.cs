@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public class BattlePlayer : MonoBehaviour {
 
     public int charisma     = 0;
-    public int friendThreshold = 10;
-    public int enemyThreshold = -10;
+    
     public Text charismaMeter;
-	
-	// Update is called once per frame
-	void Update () {
+    private int friendThreshold = 5;
+    private int enemyThreshold = -5;
+
+    // Update is called once per frame
+    void Update () {
 		if (charismaMeter != null)
         	charismaMeter.text = charisma.ToString();
 
