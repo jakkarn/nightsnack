@@ -226,8 +226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 14}
-  m_SizeDelta: {x: 1000, y: 400}
+  m_AnchoredPosition: {x: 0, y: -4}
+  m_SizeDelta: {x: 950, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180951704
 MonoBehaviour:
@@ -261,16 +261,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Man, I knew I shouldn''t have gone to this party. It is too crowded in
-    here.
-
-
-    I realized I forgot my burrito in the oven, just when I arrived at this party.
-
-
-    I better hurry up home, before my house burns down...
-
-    (press space)'
+  m_Text: "Man, I knew I shouldn't have gone to this party.\n\nI realized I forgot
+    my burrito in the oven, just when I arrived at this party. I better hurry up home,
+    before my house burns down...\n\n It is too crowded in here. That big dancing
+    guy is even blocking the exit.\n(press space)"
 --- !u!222 &1180951705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -309,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 347, y: -192}
+  m_AnchoredPosition: {x: 319, y: -183}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328621284

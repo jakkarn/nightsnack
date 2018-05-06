@@ -7437,7 +7437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8207857ac3ebf342829a5f79c93859c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveAttentionGain: 0.005
+  passiveAttentionGain: 0.05
   attentionMeterPrefab: {fileID: 224141114131289842, guid: 5c4093d69d1e4b04ab7f2a68e3d5b2c9,
     type: 2}
   meterRoot: {fileID: 1716300554}
