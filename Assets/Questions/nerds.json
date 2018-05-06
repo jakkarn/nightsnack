@@ -33,7 +33,7 @@
                 "response": "Yeah, pikachu is so cute!"
             },
 	    {
-		        "text": "Landorus",
+		        "text": "Mewtwo",
                 "effect": 2,
                 "response": "That's a great competitive viable choice"
 	    }
@@ -53,7 +53,7 @@
             "response": "You are damn right! *starts dancing harder than ever*"
         },
         {
-            "text": "hästen är påoängen",
+            "text": "hästen är påoåoåoåoåoängen",
             "effect": -3,
             "response": "That's not even remotely funny!"
         }
@@ -169,6 +169,4 @@
             }
         ]
     }
-
-
 ]
