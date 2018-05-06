@@ -144,6 +144,57 @@
                 "response": "That doesn't make any sense."
             }
         ]
+    },
+    {
+        "question": "Wood float on water... what also floats?",
+        "answers": [
+            {
+                "text": "Very small rocks!",
+                "effect": 2,
+                "response": "ermmm yes..."
+            },
+            {
+                "text": "A duck",
+                "effect": 2,
+                "response": "Precisely!"
+            },
+            {
+                "text": "Everything with a lower density than water.",
+                "effect": -2,
+                "response": "Wow, you don't get it, do you?"
+            },
+            {
+                "text": "I don't know!",
+                "effect": 0,
+                "response": "Comon, man, it's monty python!"
+            }
+        ]
+    },
+    {
+        "question": "Why do witches burn?",
+        "answers": [
+            {
+                "text": "Because they are made of wood!",
+                "effect": 2,
+                "response": "Good!"
+            },
+            {
+                "text": "Because they can do fire magic",
+                "effect": -1,
+                "response": "What, no..."
+            },
+            {
+                "text": "They were scared of water and made themselves water resistant. A side-effect was that they got weak to fire.",
+                "effect": 1,
+                "response": "Could have been, but no..."
+            },
+            {
+                "text": "You're just weird",
+                "effect": -1,
+                "response": "Comon, man, it's monty python!"
+            }
+        ]
     }
+
 
 ]
