@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 761ae7b5cebd6624b989b512250b8523
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 017645f46c4a9514c96f88fa4db2039c
+  - enabled: 1
     path: Assets/Scenes/Overworld.unity
     guid: 2ebc26482edef374e8a8886483cbde1c
   - enabled: 1
