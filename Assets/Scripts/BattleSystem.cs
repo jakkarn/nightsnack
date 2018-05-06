@@ -31,6 +31,8 @@ public class BattleSystem : MonoBehaviour {
 
 	private EnemyType currentEnemyType;
 
+	public CharismaMeter charismaMeter;
+
 	// Use this for initialization
 	void Start () {
 		currentEnemyType = Global.encounter;
@@ -73,6 +75,7 @@ public class BattleSystem : MonoBehaviour {
         if (Input.GetButtonDown("Submit"))
 		{
             player.charisma += answers[currentChoice].effect;
+			charismaMeter.changeValue (answers[currentChoice].effect);
 			resposeText.text = answers [currentChoice].response;
 			ResetButtons();
 			currentChoice = 0;
@@ -114,12 +117,23 @@ public class BattleSystem : MonoBehaviour {
 		if (encounterQuestions == null || encounterQuestions.Count == 0) {
 			Debug.Log ("Found no questions when creating buttons for type " + currentEnemyType + ". Creating a dummy question.");
 			question = new Question ();
-			Answer a = new Answer ();
-			a.effect = 0;
-			a.response = "NO RESPONSE!!!";
-			a.text = "NO ANSWER!!!";
+			int default_num_answers = 3;
+			int lowest_answer = -1;
+			question.answers = new Answer[default_num_answers];
+			for (int i = 0; i < default_num_answers; ++i) {
+				Answer a = new Answer ();
+				int effect = i + lowest_answer;
+				a.effect = effect;
+				string chg;
+				if (effect < 0)
+					chg = effect.ToString ();
+				else
+					chg = "+" + effect.ToString ();
+				a.response = "NO REPONSE";
+				a.text = "NO ANSWER (" + chg + ")";
+				question.answers [i] = a;
+			}
 			question.question = "NO QUESTION FOUND!!!";
-			question.answers = new Answer[] { a };
 		} else {
 			question = encounterQuestions [Random.Range (0, encounterQuestions.Count)];
 		}

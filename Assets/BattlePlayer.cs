@@ -17,7 +17,8 @@ public class BattlePlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        charismaMeter.text = charisma.ToString();
+		if (charismaMeter != null)
+        	charismaMeter.text = charisma.ToString();
 
         if(charisma < enemyThreshold)
         {
