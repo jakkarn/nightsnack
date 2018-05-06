@@ -769,7 +769,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 542418041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a4531e72baf6040934cf0f7c2c3bd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 35fc166fcd8e9ff4aa2dc94935b798ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   exit: {fileID: 2041735069}
@@ -2642,6 +2642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1958831579}
   - component: {fileID: 1958831580}
+  - component: {fileID: 1958831581}
   m_Layer: 0
   m_Name: WIN
   m_TagString: Untagged
@@ -2687,6 +2688,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.85536003, y: 2.7540436}
   m_EdgeRadius: 0
+--- !u!114 &1958831581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958831578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d12ccbaeb64c0846ae3aee9a103ef24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1965880041
 GameObject:
   m_ObjectHideFlags: 0
