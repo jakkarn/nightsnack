@@ -58,9 +58,9 @@
                 "response": "It's magic!"
             },
 	        {
-		        "text": "I hate magic"
-		        "effect": -2,
-		        "response": "Aww" 
+		    "text": "I hate magic",
+		    "effect": -2,
+		    "response": "Aww" 
             }
         ]
     }

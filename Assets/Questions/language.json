@@ -33,6 +33,11 @@
                 "response": "Blev mätt"
             },
 	    {
+		"text": "Elskåp",
+		"effect": 2,
+		"response": "Blev proppmätt"
+	    },
+	    {
 		"text": "Engelsk hund",
                 "effect": -2,
                 "response": "Dog"
