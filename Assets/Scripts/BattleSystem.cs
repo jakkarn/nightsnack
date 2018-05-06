@@ -69,7 +69,6 @@ public class BattleSystem : MonoBehaviour {
 		textOutput.text = greetings [(byte)currentEnemyType] [Random.Range (0, greetings [(byte)currentEnemyType].Count)];
 
 		CreateButtons (null);
-
 		_buttons [0].Select ();
 	}
 
@@ -166,7 +165,7 @@ public class BattleSystem : MonoBehaviour {
 		if (question == null) {
 			Button btn = Instantiate<Button> (buttonPrefab);
 			btn.transform.SetParent (uiRoot);
-			buttonPrefab.GetComponentInChildren<Text> ().text = "Continue";
+			btn.GetComponentInChildren<Text> ().text = "Continue";
 
 			_buttons.Add (btn);
 			return;
