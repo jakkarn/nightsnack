@@ -51,13 +51,14 @@ public class Player : MonoBehaviour {
             if (attention.Attention >= 100)
             {
                 Global.encounter = type;
-                Global.hasBattled = true; // is run before battle is loaded!
+                Global.hasBattled = true;
                 Global.playerPos = new Vector3(this.transform.position.x, this.transform.position.y);
                 SceneManager.LoadScene ("SimpleBattle");
 
                 /* reset all attentions on battle */
                 foreach (EnemyType type2 in Enum.GetValues(typeof(EnemyType)))
                     attentions[type2].Attention = 0;
+                break; //only last encounter type works otherwise
             }
         }
 
