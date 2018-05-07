@@ -4,8 +4,8 @@
         "answers": [
             {
                 "text": "I hate Mickey and hope he dies for eating some tainted cheese alone and forgotten in a soiled bathroom",
-                "effect": -2,
-                "response": "That's so mean!"
+                "effect": -1,
+                "response": "Hey, chill man..."
             },
             {
                 "text": "Of course, it's november 13th!",
@@ -16,7 +16,12 @@
 		"text": "Mickey schmicky, I hope you choke on a sticky",
 		"effect": -2,
 		"response": "That's so rude!"
-	    }
+    },
+    {
+        "text": "*use punch*",
+        "effect": 0,
+        "response": "*disney nerd's dance moves are too evasive*"
+    }
         ]
     },
     {
@@ -32,10 +37,15 @@
                 "effect": 1,
                 "response": "That's a good choice"
             },
-	    {
+	           {
                 "text": "Let it go, let it go! Can't hold it back anymore!",
                 "effect": 2,
                 "response": "I love Frozen!"
+            },
+            {
+                "text": "*use punch*",
+                "effect": 0,
+                "response": "*disney nerd is full of evasive dance moves*"
             }
         ]
     },
@@ -48,15 +58,20 @@
                 "response": "Yeah, I know what you mean. I miss them too"
             },
             {
-                "text": "They ruined the Star Wars universe, REEEEEEEEEEEEEEEEEEE!",
+                "text": "I will never forgive them for ruining the Star Wars universe!",
                 "effect": -2,
-                "response": "WOow *Gets taken aback*"
+                "response": "How can you say that?! *Gets taken aback*"
             },
 	    {
 		"text": "Disney World is the best!",
 		"effect": 2,
 		"response": "I know right?!?"
-	    }
+	    },
+        {
+            "text": "*use punch*",
+            "effect": 0,
+            "response": "*disney nerd dodges while dancing*"
+        }
         ]
     },
     {
@@ -65,18 +80,73 @@
             {
                 "text": "Spirited Away",
                 "effect": 1,
-                "response": "Disney made a good choice by distributing Ghiblis movies right?"
+                "response": "So cool that Disney distributed Ghibli's movie!"
             },
             {
                 "text": "Pokémon 2000",
                 "effect": -2,
-                "response": "Pokémon is not made by Disney!"
+                "response": "Pokémon is not made by Disney! *angry face*"
             },
 	    {
 		"text": "Frozen is the best movie of all time!",
 		"effect": 2,
 		"response": "I know right?!?"
-	    }
+	    },
+        {
+            "text": "*use punch*",
+            "effect": 0,
+            "response": "*one does not simply punch a dancing disney nerd*"
+        }
+        ]
+    },
+    {
+        "question": "Those are some nice dance moves, man!",
+        "answers": [
+            {
+                "text": "Like a disney movie right?",
+                "effect": 1,
+                "response": "Haha, yes totally!"
+            },
+            {
+                "text": "*stop dancing*",
+                "effect": 1,
+                "response": "Again! Again!"
+            },
+    	    {
+        		"text": "...",
+                "effect": 1,
+                "response": "i said... THOSE ARE SOME NICE DANCE MOVES, MAN!"
+    	    },
+            {
+        		"text": "You make me uncomfortable here...",
+                "effect": -2,
+                "response": "n-no, I'm so sorry, I didn't mean it like that! *friend feels bad*"
+    	    }
+        ]
+    },
+    {
+        "question": "Wow, Ben! Remember me from junior high?! *ridiculously big smile*",
+        "answers": [
+        {
+            "text": "Eh... yeah... m-Martin, right?",
+            "effect": -2,
+            "response": "Don't... remember I changed my name to 'Simba'?"
+        },
+        {
+            "text": "Of, course I remember you. You were pee-da-pants-pete! *grins*",
+            "effect": 2,
+            "response": "HAHA, YEAH! THAT'S ME!"
+        },
+        {
+            "text": "*punch him*",
+            "effect": 1,
+            "response": "*cough* hah, just like old times, huh? *you don't understand why this is happening*"
+        },
+        {
+            "text": "Of course! We watched 'The Lion King' like a hundered times!",
+            "effect": 3,
+            "response": "I am glad that you remember me!"
+        }
         ]
     }
 

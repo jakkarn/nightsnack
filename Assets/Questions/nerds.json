@@ -76,7 +76,12 @@
                 "text": "the sadle.",
                 "effect": -1,
                 "response": "..."
-            }
+            },
+            {
+                "text": "*express your frustration*",
+                "effect": 2,
+                "response": "*friend feels in control*"
+            },
         ]
     },
     {
@@ -91,6 +96,11 @@
                 "text": "How many?!",
                 "effect": 2,
                 "response": "It's 64! *smiles*"
+            },
+            {
+                "text": "*try to solve the problem*",
+                "effect": 3,
+                "response": "*You and your friend takes out a laptop and try solving the puzzle together. It's fun!*"
             }
         ]
     },
@@ -167,6 +177,31 @@
                 "effect": -1,
                 "response": "Comon, man, it's monty python!"
             }
+        ]
+    },
+    {
+        "question": "Those are some nice dance moves, man!",
+        "answers": [
+            {
+                "text": "*dance away*",
+                "effect": 1,
+                "response": "*This guy keeps up with your dancing!*"
+            },
+            {
+                "text": "*stop dancing*",
+                "effect": 1,
+                "response": "That got your attention!"
+            },
+    	    {
+        		"text": "...",
+                "effect": 1,
+                "response": "i said... THOSE ARE SOME NICE DANCE MOVES, MAN!"
+    	    },
+            {
+        		"text": "I know my dance-moves are bad, you don't have to be a jerk about it...",
+                "effect": -2,
+                "response": "n-no, I'm so sorry, I didn't mean it like that! *friend feels bad*"
+    	    }
         ]
     }
 ]

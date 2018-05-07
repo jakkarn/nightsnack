@@ -10,10 +10,10 @@
             {
                 "text": "*Go to the nearest faucet and let it spill water until it overflows*",
                 "effect": -2,
-                "response": "That's unreasonable!"
+                "response": "HEY! STOP THAT!"
             },
 	    {
-		"text": "I piss in the shower to save flushing water",
+		"text": "I pee in the shower to save water. Less flushing",
                 "effect": 1,
                 "response": "Oh, that's great I guess..."
 	    }
@@ -38,7 +38,7 @@
                 "response": "That's a good alternative"
 	    }
         ]
-    },    
+    },
     {
         "question": "People who don't properly dispose of their trash are garbage",
         "answers": [
@@ -60,7 +60,7 @@
         ]
     },
     {
-	
+
         "question": "It isn't good for the environment to eat too much meat.",
         "answers": [
             {
@@ -71,13 +71,33 @@
             {
                 "text": "I usually sacrifice my cattle in the name of satan",
                 "effect": 2,
-                "response": "That sounds metal as fuck!"
+                "response": "Haha! *understands sarcasm* That sounds metal as fuck!"
             },
 	    {
-		"text": "I like my burgers with two patties and two slices of bacon",
+		          "text": "I like my burgers with two patties and two slices of bacon",
                 "effect": -2,
                 "response": "That's not sustainable!"
 	    }
+        ]
+    },
+    {
+	        "question": "Let me show you a magic trick: 'bada bing bada boom!'",
+            "answers": [
+            {
+                "text": "*Excitingly shout 'boom!' in sync*",
+                "effect": 3,
+                "response": "An enthusiast, I like it!"
+            },
+            {
+                "text": "Wow, where did you get those doves from?",
+                "effect": 2,
+                "response": "A true magician never tells! *grins happily*"
+            },
+	        {
+    		    "text": "Magicians are just a bunch of animal abusers...",
+    		    "effect": -2,
+    		    "response": "Is that true...? *realizes that his two great passions in life are paradoxal to on another*"
+            }
         ]
     }
 ]

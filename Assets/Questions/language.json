@@ -13,7 +13,7 @@
                 "response": "*You get a double high five in spanish*"
             },
 	    {
-		"text": "No",
+		        "text": "No",
                 "effect": -1,
                 "response": "*Cries in spanish*"
 	    }
@@ -33,13 +33,13 @@
                 "response": "Blev mätt"
             },
 	    {
-		"text": "Elskåp",
-		"effect": 1,
-		"response": "Blev proppmätt"
+        		"text": "Elskåp",
+        		"effect": 1,
+        		"response": "Blev proppmätt"
 	    },
 	    {
-		"text": "Engelsk hund",
-                "effect": 2,
+		          "text": "Engelsk hund",
+                "effect": -2,
                 "response": "Dog"
 	    }
         ]
@@ -65,7 +65,7 @@
             {
                 "text": "*neigh*",
                 "effect": -3,
-                "response": "*gallops off like a gaselle... and back like a horse*"
+                "response": "*imitates a gaselle to show that he doesn't know you*"
             }
 
         ]
@@ -76,19 +76,44 @@
         "answers": [
             {
                 "text": "MY BURRITO IS BURNING AT HOME AND I CAN'T DO ANYTHING ABOUT IT!",
-                "effect": 5,
+                "effect": 3,
                 "response": "Hurri an seiv yurr burrito muchacho!!!"
             },
             {
                 "text": "english!!! PLEASE!",
-                "effect": -3,
-                "response": "Aim trayin tu lern, don bi min"
+                "effect": -2,
+                "response": "No... no..."
             },
-	    {
-		"text": "I like Enchiladas!",
+	          {
+		        "text": "I like Enchiladas!",
                 "effect": 2,
-                "response": "Gud chois!"
-	    }
+                "response": "Me amigo!"
+	           }
+        ]
+    },
+    {
+        "question": "Those are some nice dance moves, man!",
+        "answers": [
+            {
+                "text": "*dance away*",
+                "effect": 1,
+                "response": "*This guy keeps up with your dancing!*"
+            },
+            {
+                "text": "*stop dancing*",
+                "effect": 1,
+                "response": "That got your attention!"
+            },
+    	    {
+        		"text": "...",
+                "effect": 1,
+                "response": "i said... THOSE ARE SOME NICE DANCE MOVES, MAN!"
+    	    },
+            {
+        		"text": "Let's see you do any better! *angrily*",
+                "effect": -2,
+                "response": "n-no, I'm so sorry, I didn't mean it like that! *friend feels bad*"
+    	    }
         ]
     }
 ]
